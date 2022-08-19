@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import com.pms.cde.pensionerDisbursementMicroservice.Exception.PensionerDetailNotFoundException;
 import com.pms.cde.pensionerDisbursementMicroservice.Model.PensionerDetail;
 
-@FeignClient(name="pensioner-details-service", url = "http://localhost:7002/details")
+@FeignClient(name="pensioner-details-service", url = "http://13.233.133.227:7002/details")
 public interface PensionDetailsClient {
 	@GetMapping("/pensionerDetailByAadhaar/{aadhaarNumber}")
 	public PensionerDetail getPensionerDetailByAadhaar(@RequestHeader("Authorization") String header,@PathVariable long aadhaarNumber)
